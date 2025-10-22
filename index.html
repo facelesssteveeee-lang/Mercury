@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FOR 8 - MERCURY ONLY!!!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<br>
+<h1>Welcome!</h1>
+<div class="textdesc">
+    We advice to NOT distribute any content from this website to another person/section, please make sure that the contents from this website is ONLY ACCESSIBLE HERE and nowhere else.
+    (PS: I don't know who made this website.)
+</div>
+<br>
+<br>
+<section>
+  <h2>Announcements</h2>
+  <li>No current announcements </li>
+</section>
+<br>
+<section>
+  <h2>Files and Folders</h2>
+  <div class="folder-container">
+
+    <div class="folder" data-page="" data-file-path="filipinoq2.html">
+        <div class="folder-tab"></div>
+        <div class="folder-body"></div>
+        <div class="folder-name">Filipino Quarter 2</div>
+    </div>
+
+    <div class="folder" data-page="Images" data-file-path="https://drive.google.com/drive/folders/1MUOYQgFPlGug8-v6i1Fr0vx-7o8OIGFE?usp=drive_link">
+        <div class="folder-tab"></div>
+        <div class="folder-body"></div>
+        <div class="folder-name">Math Quarter 2</div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const folders = document.querySelectorAll('.folder');
+
+        folders.forEach(folder => {
+            // 1. Get the assigned file path from the new data attribute
+            const filePath = folder.getAttribute('data-file-path');
+
+            folder.addEventListener('click', () => {
+                // --- 1. Animation Logic (from your original code) ---
+                
+                // Reset all folders (remove 'open' class)
+                folders.forEach(f => f.classList.remove('open'));
+
+                // Add 'open' class to the clicked folder (triggers CSS animation)
+                folder.classList.add('open');
+                
+                // Optional: You can remove the 'open' class after the animation time (e.g., 500ms) 
+                // to prepare for the next click, though this is dependent on your CSS.
+                // setTimeout(() => folder.classList.remove('open'), 500);
+
+
+                // --- 2. File Opening Logic (The new requirement) ---
+
+                if (filePath) {
+                    // Open the assigned file path in a new tab
+                    // This uses a small delay to let the animation start first
+                    setTimeout(() => {
+                        window.open(filePath, '_blank');
+                    }, 100); 
+                }
+            });
+        });
+    });
+</script>
+
+</section>
+</html>
