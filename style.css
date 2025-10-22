@@ -1,6 +1,6 @@
 * {
   text-align: center;
-  background: #1C1F3F;
+  background: black;
   color: white;
   font-family: monospace;
 }
@@ -24,6 +24,9 @@ li {
   display: inline-block;
 }
 
+b {
+    background-color: #42445A;
+}
 section {
     justify-content: center;
     text-align: center;
