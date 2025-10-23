@@ -1,93 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FOR 8 - MERCURY ONLY!!! [ AP PRACTICE TEST HERE ]</title>
+  <title>FOR 8 - MERCURY ONLY!!!</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<br>
-<h1>Welcome!</h1>
-<section>
-  <h2>Announcements - Last Updated: 01:04 10/23/25</h2>
-  <li>No current announcements.</li>
-</section>
-<br>
-<section>
-  <h2>Reviewers</h2>
-  <div class="folder-container">
 
-    <div class="folder" data-page="" data-file-path="filipinoq2.html">
+<body>
+  <header>
+    <h1>Welcome!</h1>
+  </header>
+
+  <section class="announcements">
+    <h2>Announcements - Last Updated: 20:13 10/23</h2>
+    <li>Please pass every missed activities to our adviser and subject teachers tomorrow.</li>
+    <li>Bring your NEW MAPEH painting tomorrow.</li>
+    <li>Bring your English Portfolio tomorrow for grading.</li>
+  </section>
+
+  <section class="reviewers">
+    <h2>Reviewers</h2>
+    <div class="folder-container">
+
+      <div class="folder" data-file-path="filipinoq2.html">
         <div class="folder-tab"></div>
         <div class="folder-body"></div>
         <div class="folder-name">Filipino Quarter 2</div>
-    </div>
+      </div>
 
-    <div class="folder" data-page="" data-file-path="https://drive.google.com/drive/folders/1SBk9V5nsCbDu5BuKr4hb8ELjw3FjcqDH?usp=sharing">
+      <div class="folder" data-file-path="https://drive.google.com/drive/folders/1SBk9V5nsCbDu5BuKr4hb8ELjw3FjcqDH?usp=sharing">
         <div class="folder-tab"></div>
         <div class="folder-body"></div>
         <div class="folder-name">AP Quarter 2</div>
-    </div>
+      </div>
 
-    <div class="folder" data-page="Images" data-file-path="https://drive.google.com/drive/folders/1MUOYQgFPlGug8-v6i1Fr0vx-7o8OIGFE?usp=drive_link">
+      <div class="folder" data-file-path="https://drive.google.com/drive/folders/1MUOYQgFPlGug8-v6i1Fr0vx-7o8OIGFE?usp=drive_link">
         <div class="folder-tab"></div>
         <div class="folder-body"></div>
         <div class="folder-name">Math Quarter 2</div>
-    </div>
+      </div>
 
-    <div class="folder" data-page="Images" data-file-path="https://docs.google.com/document/d/1SMFoaybhtoOENwQiMI2Y5MRJLso6lG98/edit?usp=sharing&ouid=110430247299547628153&rtpof=true&sd=true">
+      <div class="folder" data-file-path="https://docs.google.com/document/d/1SMFoaybhtoOENwQiMI2Y5MRJLso6lG98/edit?usp=sharing">
         <div class="folder-tab"></div>
         <div class="folder-body"></div>
         <div class="folder-name">AP Practice Test</div>
+      </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
-<br>
-<br>
-<script src="https://cdn.logwork.com/widget/countdown.js"></script>
-<a href="https://logwork.com/countdown-timer" class="countdown-timer" data-style="circles" data-timezone="Asia/Manila" data-textcolor="#ebebeb" data-date="2025-10-24 18:25" data-digitscolor="#f5f5f5" data-unitscolor="#f2f2f2">12-day Break</a>
-<br>
-<p>
-    We advice you to NOT distribute any content from this website to another person/section, please make sure that the contents from this website is ONLY ACCESSIBLE HERE and nowhere else.
-    (PS: I don't know who made this website.)
-</p>
-<script>
+  <section class="admin-note">
+    <div class="textdesc">
+      <b>Admin's Note</b>
+      <p>Let's go we did it! We are successfully done with our quarterly exam, and let's congratulate ourselves! But if you didn't pass an exam, don't blame yourself and do better for the next exam. <br><br>Also thank you for using this website as a source for the reviewers you need, this website will not be taken down, it will still be operational after this and you can still use this since Rica will also be putting her reviewers here.</p>
+      <p>Congrats everyone! You did your best today. See you tomorrow and enjoy the midyear break next week!</p>
+    </div>
+  </section>
+
+  <section class="countdown">
+    <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+    <a href="https://logwork.com/countdown-timer" class="countdown-timer"
+      data-style="circles" data-timezone="Asia/Manila"
+      data-textcolor="#ebebeb" data-date="2025-10-24 18:25"
+      data-digitscolor="#f5f5f5" data-unitscolor="#f2f2f2">
+      12-day Break
+    </a>
+  </section>
+
+  <footer>
+    <p>Do not distribute any content from this website. Content is ONLY ACCESSIBLE HERE.</p>
+  </footer>
+
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const folders = document.querySelectorAll('.folder');
-
-        folders.forEach(folder => {
-            // 1. Get the assigned file path from the new data attribute
-            const filePath = folder.getAttribute('data-file-path');
-
-            folder.addEventListener('click', () => {
-                // --- 1. Animation Logic (from your original code) ---
-
-                // Reset all folders (remove 'open' class)
-                folders.forEach(f => f.classList.remove('open'));
-
-                // Add 'open' class to the clicked folder (triggers CSS animation)
-                folder.classList.add('open');
-
-                // Optional: You can remove the 'open' class after the animation time (e.g., 500ms) 
-                // to prepare for the next click, though this is dependent on your CSS.
-                // setTimeout(() => folder.classList.remove('open'), 500);
-
-
-                // --- 2. File Opening Logic (The new requirement) ---
-
-                if (filePath) {
-                    // Open the assigned file path in a new tab
-                    // This uses a small delay to let the animation start first
-                    setTimeout(() => {
-                        window.open(filePath, '_blank');
-                    }, 100); 
-                }
-            });
+      const folders = document.querySelectorAll('.folder');
+      folders.forEach(folder => {
+        const filePath = folder.getAttribute('data-file-path');
+        folder.addEventListener('click', () => {
+          folders.forEach(f => f.classList.remove('open'));
+          folder.classList.add('open');
+          setTimeout(() => {
+            if (filePath) window.open(filePath, '_blank');
+          }, 200);
         });
+      });
     });
-</script>
-
-</section>
+  </script>
+</body>
 </html>
