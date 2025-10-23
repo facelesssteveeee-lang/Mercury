@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FOR 8 - MERCURY ONLY!!!</title>
+  <title>FOR 8 - MERCURY ONLY!!! [ AP PRACTICE TEST HERE ]</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <br>
@@ -23,7 +23,7 @@
         <div class="folder-body"></div>
         <div class="folder-name">Filipino Quarter 2</div>
     </div>
-    
+
     <div class="folder" data-page="" data-file-path="https://drive.google.com/drive/folders/1SBk9V5nsCbDu5BuKr4hb8ELjw3FjcqDH?usp=sharing">
         <div class="folder-tab"></div>
         <div class="folder-body"></div>
@@ -34,6 +34,12 @@
         <div class="folder-tab"></div>
         <div class="folder-body"></div>
         <div class="folder-name">Math Quarter 2</div>
+    </div>
+
+    <div class="folder" data-page="Images" data-file-path="https://docs.google.com/document/d/1SMFoaybhtoOENwQiMI2Y5MRJLso6lG98/edit?usp=sharing&ouid=110430247299547628153&rtpof=true&sd=true">
+        <div class="folder-tab"></div>
+        <div class="folder-body"></div>
+        <div class="folder-name">AP Practice Test</div>
     </div>
 
   </div>
@@ -66,13 +72,13 @@
 
             folder.addEventListener('click', () => {
                 // --- 1. Animation Logic (from your original code) ---
-                
+
                 // Reset all folders (remove 'open' class)
                 folders.forEach(f => f.classList.remove('open'));
 
                 // Add 'open' class to the clicked folder (triggers CSS animation)
                 folder.classList.add('open');
-                
+
                 // Optional: You can remove the 'open' class after the animation time (e.g., 500ms) 
                 // to prepare for the next click, though this is dependent on your CSS.
                 // setTimeout(() => folder.classList.remove('open'), 500);
