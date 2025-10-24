@@ -1,43 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FOR 8 - MERCURY ONLY!!!</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'JetBrains Mono', monospace;
+      color: white;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #0b0c10 0%, #000 90%);
+      text-align: center;
+      padding: 0;
+    }
+
+    header {
+      background: rgba(0, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(0,255,255,0.2);
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 500;
+      border-radius: 25px;
+      margin: 10px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #00e0ff;
+      text-shadow: 0 0 10px #00e0ff;
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 6px;
+    }
+
+    nav a {
+      color: #b8d9ff;
+      margin: 0 8px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    section {
+      margin: 30px auto;
+      max-width: 95%;
+      padding: 10px;
+    }
+
+    /* Announcements */
+    .announcements {
+      background: rgba(30, 30, 50, 0.8);
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0,255,255,0.2);
+      text-align: left;
+      font-size: 13px;
+    }
+
+    .announcements h2 {
+      cursor: pointer;
+      text-align: center;
+      color: #b8d9ff;
+      text-shadow: 0 0 5px #0066ff;
+      font-size: 16px;
+    }
+
+    .announcements ul {
+      padding: 0;
+      display: none;
+      transition: max-height 0.3s ease;
+    }
+
+    .announcements li {
+      list-style: none;
+      background: #111;
+      margin: 6px 0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-shadow: 0 0 6px cyan;
+    }
+
+    .announcements.open ul {
+      display: block;
+    }
+
+    /* Reviewers */
+    .reviewers h2 {
+      color: #b8d9ff;
+      text-shadow: 0 0 5px #0066ff;
+      font-size: 16px;
+    }
+
+    .search-box input {
+      width: 90%;
+      padding: 6px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 6px;
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .folder-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .folder {
+      width: 120px;
+      height: 90px;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.25s;
+    }
+
+    .folder:hover {
+      transform: translateY(-5px) scale(1.03);
+    }
+
+    .folder-body {
+      background: linear-gradient(135deg, #008cff, #00ccff);
+      width: 100%;
+      height: 80%;
+      position: absolute;
+      bottom: 0;
+      border-radius: 4px 10px 10px 10px;
+      box-shadow: 0 0 10px rgba(0, 200, 255, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .folder-tab {
+      background: linear-gradient(135deg, #009dff, #00d5ff);
+      width: 45%;
+      height: 25%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 4px 4px 0 0;
+      z-index: 1;
+    }
+
+    .folder.open .folder-body {
+      transform: rotateX(5deg) scale(1.05);
+      background: linear-gradient(135deg, #33ccff, #99ffff);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    }
+
+    .folder-name {
+      position: absolute;
+      bottom: -18px;
+      width: 100%;
+      font-weight: bold;
+      font-size: 0.8em;
+      text-shadow: 0 0 3px cyan;
+    }
+
+    /* Admin Note */
+    .textdesc {
+      background: rgba(50, 60, 90, 0.8);
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
+      font-size: 13px;
+    }
+
+    b {
+      font-size: 1em;
+      color: #00ffff;
+      text-shadow: 0 0 5px #00b3ff;
+    }
+
+    /* Countdown */
+    .countdown {
+      margin-top: 25px;
+      transform: scale(0.9);
+    }
+
+    /* Footer */
+    footer {
+      padding: 10px;
+      background: rgba(0, 255, 255, 0.05);
+      border-top: 1px solid rgba(0,255,255,0.2);
+      font-size: 11px;
+      opacity: 0.9;
+    }
+
+    @media (min-width: 768px) {
+      h1 { font-size: 36px; }
+      .announcements h2, .reviewers h2 { font-size: 18px; }
+      .folder { width: 150px; height: 100px; }
+      .folder-name { font-size: 0.9em; }
+    }
+  </style>
 </head>
 
 <body>
   <header>
-    <h1>Welcome!</h1>
+    <h1>8 - MERCURY</h1>
+    <nav>
+      <a href="#announcements">Announcements</a>
+      <a href="#reviewers">Reviewers</a>
+      <a href="#admin">Admin Note</a>
+      <a href="#countdown">Countdown</a>
+    </nav>
   </header>
 
-  <section class="announcements">
-    <h2>Announcements - Last Updated: 20:13 10/23</h2>
-    <li>Please pass every missed activities to our adviser and subject teachers tomorrow.</li>
-    <li>Bring your NEW MAPEH painting tomorrow.</li>
-    <li>Bring your English Portfolio tomorrow for grading.</li>
+  <section id="announcements" class="announcements">
+    <h2>Announcements - Last Updated: 20:13 10/23 (Click here to view)</h2>
+    <ul>
+      <li>Submit all missed activities to advisers and subject teachers tomorrow.</li>
+      <li>Bring your new MAPEH painting.</li>
+      <li>Bring your English Portfolio for grading.</li>
+    </ul>
   </section>
 
-  <section class="reviewers">
+  <section id="reviewers" class="reviewers">
     <h2>Reviewers</h2>
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Search reviewer...">
+    </div>
     <div class="folder-container">
 
-<p>No reviewers available</p>
+      <div class="folder" data-file-path="https://drive.google.com/drive/folders/1SBk9V5nsCbDu5BuKr4hb8ELjw3FjcqDH?usp=sharing">
+        <div class="folder-tab"></div>
+        <div class="folder-body"></div>
+        <div class="folder-name">AP Q2</div>
+      </div>
+
+      <div class="folder" data-file-path="https://drive.google.com/drive/folders/1MUOYQgFPlGug8-v6i1Fr0vx-7o8OIGFE?usp=drive_link">
+        <div class="folder-tab"></div>
+        <div class="folder-body"></div>
+        <div class="folder-name">Math Q2</div>
+      </div>
 
     </div>
   </section>
 
-  <section class="admin-note">
-    <div class="textdesc">
-      <b>Admin's Note</b>
-      <p>Let's go we did it! We are successfully done with our quarterly exam, and let's congratulate ourselves! But if you didn't pass an exam, don't blame yourself and do better for the next exam. <br><br>Also thank you for using this website as a source for the reviewers you need, this website will not be taken down, it will still be operational after this and you can still use this since Rica will also be putting her reviewers here</p>
-      <p>Congrats everyone! You did your best today. See you tomorrow and enjoy the midyear break next week!</p>
-    </div>
+  <section id="admin" class="admin-note">
   </section>
 
-  <section class="countdown">
+  <section id="countdown" class="countdown">
     <script src="https://cdn.logwork.com/widget/countdown.js"></script>
     <a href="https://logwork.com/countdown-timer" class="countdown-timer"
       data-style="circles" data-timezone="Asia/Manila"
@@ -48,21 +269,34 @@
   </section>
 
   <footer>
-    <p>Do not distribute any content from this website. Content is ONLY ACCESSIBLE HERE.</p>
+    <p>Do not distribute content from this site. Access is exclusive to FOR 8 - MERCURY.</p>
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const folders = document.querySelectorAll('.folder');
-      folders.forEach(folder => {
+    // Toggle announcements
+    const annSection = document.querySelector('.announcements');
+    const annTitle = annSection.querySelector('h2');
+    annTitle.addEventListener('click', () => {
+      annSection.classList.toggle('open');
+    });
+
+    // Folder click open
+    document.querySelectorAll('.folder').forEach(folder => {
+      folder.addEventListener('click', () => {
         const filePath = folder.getAttribute('data-file-path');
-        folder.addEventListener('click', () => {
-          folders.forEach(f => f.classList.remove('open'));
-          folder.classList.add('open');
-          setTimeout(() => {
-            if (filePath) window.open(filePath, '_blank');
-          }, 200);
-        });
+        document.querySelectorAll('.folder').forEach(f => f.classList.remove('open'));
+        folder.classList.add('open');
+        setTimeout(() => window.open(filePath, '_blank'), 250);
+      });
+    });
+
+    // Search filter
+    const search = document.getElementById('search');
+    search.addEventListener('keyup', () => {
+      const value = search.value.toLowerCase();
+      document.querySelectorAll('.folder').forEach(folder => {
+        const name = folder.querySelector('.folder-name').textContent.toLowerCase();
+        folder.style.display = name.includes(value) ? 'block' : 'none';
       });
     });
   </script>
